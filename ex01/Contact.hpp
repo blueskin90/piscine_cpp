@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/19 23:03:58 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/20 04:07:55 by toliver          ###   ########.fr       */
+/*   Updated: 2020/07/22 14:16:25 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <iomanip>
+#include <locale>
 
 class Contact {
 	private:
@@ -28,6 +31,7 @@ class Contact {
 		std::string	_favourite_meal;
 		std::string	_underwear_color;
 		std::string	_darkest_secret;
+		int			_index;
 
 	public:
 		Contact(void);
@@ -43,10 +47,9 @@ class Contact {
 		void		set_favourite_meal(const std::string str);
 		void		set_underwear_color(const std::string str);
 		void		set_darkest_secret(const std::string str);
-		std::string	get_first_name(void);
-		std::string	get_last_name(void);
-		std::string	get_nickname(void);
-		void		print(void);
+		void		set_index(const int index);
+		void		print_short(void) const;
+		void		print(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 03:40:44 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/20 04:07:53 by toliver          ###   ########.fr       */
+/*   Updated: 2020/07/22 14:18:59 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ std::string	get_param(std::string param_name)
 
 	std::cout << "Veuillez entrer "<< param_name << " :" << std::endl;
 	std::getline(std::cin, line);
+	while (line.length() == 0)
+	{
+		std::cout << "Veuillez entrer une chaine de caracteres valide pour "<< param_name << " :" << std::endl;
+		std::getline(std::cin, line);
+	}
 	return (line);
 }
 
@@ -41,6 +46,7 @@ void	PhoneBook::add(void)
 		this->contacts[this->i].set_favourite_meal(get_param("le plat favori"));
 		this->contacts[this->i].set_underwear_color(get_param("la couleur de sous-vetements"));
 		this->contacts[this->i].set_darkest_secret(get_param("le sombre secret"));
+		this->contacts[this->i].set_index(this->i);
 		this->i++;
 	}
 }
@@ -52,7 +58,7 @@ void	PhoneBook::search(void)
 	else
 	{
 		for (int i = 0; i < this->i; i++)
-			this->contacts[i].print();
+			this->contacts[i].print_short();
 	}
 	std::cout << "go coder SEARCH feignasse" << std::endl;
 }

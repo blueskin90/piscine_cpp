@@ -6,27 +6,14 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/19 23:03:59 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/20 04:07:53 by toliver          ###   ########.fr       */
+/*   Updated: 2020/07/22 14:30:15 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
-
-std::string	Contact::get_first_name(void)
-{
-	return (this->_first_name);
-}
-
-std::string	Contact::get_last_name(void)
-{
-	return (this->_last_name);
-}
-std::string	Contact::get_nickname(void)
-{
-	return (this->_nickname);
-}
+#include <sstream>
 
 void	Contact::set_first_name(const std::string str)
 {
@@ -81,7 +68,12 @@ void	Contact::set_darkest_secret(const std::string str)
 	this->_darkest_secret = str;
 }
 
-void	Contact::print(void)
+void	Contact::set_index(const int index)
+{
+	this->_index = index;
+}
+
+void	Contact::print(void) const
 {
 	std::cout << this->_first_name << std::endl <<
 		this->_last_name << std::endl <<
@@ -95,6 +87,36 @@ void	Contact::print(void)
 		this->_underwear_color << std::endl <<
 		this->_darkest_secret << std::endl;
 }
+
+void	short_display(std::string string)
+{
+	char arr[11];
+	
+	std::istringstream is(string);
+	if (string.size() <= 10)
+	{
+		is >> std::setw(10) >> arr;
+		std::cout << arr;
+	}
+	else
+	{
+		is >> std::setw(9) >> arr;
+		std::cout << arr << ".";
+	}
+}
+
+void	Contact::print_short(void) const
+{
+	std::cout << std::setw(10) << this->_index << "|";
+	short_display(this->_first_name);
+	std::cout << "|";
+	short_display(this->_last_name);
+	std::cout << "|";
+	short_display(this->_nickname);
+	std::cout << std::endl;
+}
+
+
 
 Contact::Contact(void)
 {
