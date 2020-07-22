@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 03:40:44 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/22 14:18:59 by toliver          ###   ########.fr       */
+/*   Updated: 2020/07/22 15:29:27 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ std::string	get_param(std::string param_name)
 	std::getline(std::cin, line);
 	while (line.length() == 0)
 	{
-		std::cout << "Veuillez entrer une chaine de caracteres valide pour "<< param_name << " :" << std::endl;
+		std::cout << "Veuillez entrer une chaine de caracteres non vides pour "<< param_name << " :" << std::endl;
 		std::getline(std::cin, line);
 	}
 	return (line);
@@ -51,16 +51,33 @@ void	PhoneBook::add(void)
 	}
 }
 
-void	PhoneBook::search(void)
+void	PhoneBook::search(void) const
 {
+	std::string	line;
+	int			i;
+
 	if (this->i == 0)
+	{
 		std::cout << "No contact found" << std::endl;
+		return ;
+	}
 	else
 	{
 		for (int i = 0; i < this->i; i++)
 			this->contacts[i].print_short();
 	}
-	std::cout << "go coder SEARCH feignasse" << std::endl;
+	std::cout << "Veuillez entrer l'index desire:" << std::endl;
+	std::getline(std::cin, line);
+	while (line.length() == 0)
+	{
+		std::cout << "Veuillez entrer une chaine de caracteres non vide:" << std::endl;
+		std::getline(std::cin, line);
+	}
+	i = std::stoi(line);
+	if (i < 0 || i >= this->i)
+		std::cout << "Invalid index" << std::endl;
+	else
+		this->contacts[i].print();
 }
 
 PhoneBook::PhoneBook(void)
