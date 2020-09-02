@@ -63,7 +63,7 @@ void	PhoneBook::search(void) const
 	}
 	else
 	{
-		for (int i = 0; i < this->i; i++)
+		for (i = 0; i < this->i; i++)
 			this->contacts[i].print_short();
 	}
 	std::cout << "Veuillez entrer l'index desire:" << std::endl;
