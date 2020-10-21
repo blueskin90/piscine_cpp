@@ -22,8 +22,6 @@ int			main(int ac, char **av)
 		while (ac > 1)
 		{
 			str.append(av[1]);
-			if (ac > 2)
-				str.append(" ");
 			av++;
 			ac--;
 		}
