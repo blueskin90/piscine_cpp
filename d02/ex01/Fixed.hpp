@@ -7,6 +7,8 @@ class Fixed {
 	public:
 		Fixed(void);
 		Fixed(Fixed const &src);
+		Fixed(int const val);
+		Fixed(float const val);
 		~Fixed(void);
 
 		Fixed & operator=(Fixed const &rhs);
