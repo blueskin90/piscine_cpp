@@ -17,4 +17,6 @@ class Fixed {
 		static const int bits_nbr = 8;
 };
 
+std::ostream	&operator<<(std::ostream &o, Fixed const &i);
+
 #endif

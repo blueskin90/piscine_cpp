@@ -5,9 +5,10 @@ Fixed::Fixed(void) : _fixedPointValue(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &src) : _fixedPointValue(src.getRawBits())
+Fixed::Fixed(Fixed const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 }
 
 Fixed::~Fixed(void)
@@ -32,4 +33,10 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called"<< std::endl;
 	this->_fixedPointValue = raw;
+}
+
+std::ostream	&operator<<(std::ostream &stream, Fixed const &nbr)
+{
+		stream << nbr.getRawBits();
+		return stream;
 }
