@@ -11,12 +11,12 @@ Fixed::Fixed(Fixed const &src)
 	*this = src;
 }
 
-Fixed::Fixed(int const val)  : _fixedPointValue(val << this->bits_nbr)
+Fixed::Fixed(int const val)  : _fixedPointValue(val << this->_bits_nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(int const val)  : _fixedPointValue(roundf(val * pow(2, this->_bits_nbr))
+Fixed::Fixed(float const val)  : _fixedPointValue(roundf(val * (1 << this->_bits_nbr)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -43,6 +43,16 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called"<< std::endl;
 	this->_fixedPointValue = raw;
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->_fixedPointValue >> this->_bits_nbr);
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->_fixedPointValue / (float)(1 << this->_bits_nbr));
 }
 
 std::ostream	&operator<<(std::ostream &stream, Fixed const &nbr)
