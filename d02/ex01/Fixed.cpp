@@ -52,7 +52,7 @@ int		Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->_fixedPointValue / (float)(1 << this->_bits_nbr));
+	return ((float)this->_fixedPointValue / (1 << this->_bits_nbr));
 }
 
 std::ostream	&operator<<(std::ostream &stream, Fixed const &nbr)
