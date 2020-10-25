@@ -60,3 +60,94 @@ std::ostream	&operator<<(std::ostream &stream, Fixed const &nbr)
 		stream << nbr.toFloat();
 		return stream;
 }
+bool Fixed::operator>(Fixed const& rhs) const {
+    return (this->toFloat() > rhs.toFloat());
+}
+
+bool Fixed::operator<(Fixed const& rhs) const {
+    return (this->toFloat() < rhs.toFloat());
+}
+
+bool Fixed::operator>=(Fixed const& rhs) const {
+    return (this->toFloat() >= rhs.toFloat());
+}
+
+bool Fixed::operator<=(Fixed const& rhs) const {
+    return (this->toFloat() <= rhs.toFloat());
+}
+
+bool Fixed::operator==(Fixed const& rhs) const {
+    return (this->toFloat() == rhs.toFloat());
+}
+
+bool Fixed::operator!=(Fixed const& rhs) const {
+    return (this->toFloat() != rhs.toFloat());
+}
+
+Fixed Fixed::Fixed::operator+(Fixed const& rhs) const {
+    return (Fixed(this->toFloat() + rhs.toFloat()));
+}
+
+Fixed Fixed::Fixed::operator-(Fixed const& rhs) const {
+    return (Fixed(this->toFloat() - rhs.toFloat()));
+}
+
+Fixed Fixed::Fixed::operator*(Fixed const& rhs) const {
+    return (Fixed(this->toFloat() * rhs.toFloat()));
+}
+
+Fixed Fixed::Fixed::operator/(Fixed const& rhs) const {
+	if (rhs.toFloat() == 0) {
+		std::cout << "Dividing by zero is forbidden";
+		return (Fixed(0));
+	}
+    return (Fixed(this->toFloat() / rhs.toFloat()));
+}
+
+Fixed &Fixed::Fixed::operator++() {
+    ++(this->_fpvalue);
+    return (*this);
+}
+
+Fixed &Fixed::Fixed::operator--() {
+    --(this->_fpvalue);
+    return (*this);
+}
+
+Fixed Fixed::Fixed::operator++(int) {
+    Fixed tmp = *this;
+
+    ++(*this);
+    return (tmp);
+}
+
+Fixed Fixed::Fixed::operator--(int) {
+    Fixed tmp = *this;
+
+    --(*this);
+    return (tmp);
+}
+
+Fixed &Fixed::min(Fixed &nb1, Fixed &nb2) {
+    if (nb1.toFloat() < nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
+
+Fixed &Fixed::max(Fixed &nb1, Fixed &nb2) {
+    if (nb1.toFloat() > nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
+
+const Fixed &Fixed::min(Fixed const &nb1, Fixed const &nb2) {
+    if (nb1.toFloat() < nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
+
+const Fixed &Fixed::max(Fixed const &nb1, Fixed const &nb2) {
+    if (nb1.toFloat() > nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
