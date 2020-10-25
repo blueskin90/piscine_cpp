@@ -12,11 +12,11 @@ class Fixed {
 		Fixed(float const val);
 		~Fixed(void);
 
-		Fixed & operator=(Fixed const &rhs);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		int toInt(void) const;
 		float toFloat(void) const;
+		Fixed & operator=(Fixed const &rhs);
 		bool operator>(Fixed const &rhs) const;
 		bool operator<(Fixed const &rhs) const;
 		bool operator>=(Fixed const &rhs) const;
