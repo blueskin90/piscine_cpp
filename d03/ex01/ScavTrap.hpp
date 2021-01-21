@@ -1,26 +1,26 @@
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 
-class FragTrap {
+class ScavTrap {
 	public :
-		FragTrap(void);
-		FragTrap(FragTrap const &src);
-		FragTrap(std::string name);
-		~FragTrap(void);
+		ScavTrap(void);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap(std::string name);
+		~ScavTrap(void);
 
 
 		static unsigned int const	maxhp = 100;
-		static unsigned int const	maxep = 50;
+		static unsigned int const	maxep = 100;
 
-		FragTrap & operator=(FragTrap const &rhs);
+		ScavTrap & operator=(ScavTrap const &rhs);
 		
 		void				rangedAttack(std::string const &target) const;
 		void				meleeAttack(std::string const &target) const;
 		void				takeDamage(unsigned int amount);
 		void				beRepaired(unsigned int amount);
-		void				vaulthunter_dot_exe(std::string const &target);
+		void				challengeNewcomer(std::string const &target);
 
 		unsigned int		getHp(void) const;
 		unsigned int		getEp(void) const;

@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : _hp(100), _ep(100), _level(1), _name("Unnamed"), _meleeDamage(30), _rangedDamage(20), _armorReduc(5)
+FragTrap::FragTrap(void) : _hp(FragTrap::maxhp), _ep(FragTrap::maxep), _level(1), _name("Unnamed"), _meleeDamage(30), _rangedDamage(20), _armorReduc(5)
 {
 	std::srand(time(NULL));
 	std::cout << "unflavored FR4G-TP was born, now with 0% naming !" << std::endl ;
@@ -12,7 +12,7 @@ FragTrap::FragTrap(FragTrap const &src) : _hp(src.getHp()), _ep(src.getEp()), _l
 	std::cout << "FR4G-TP " << src.getName() << " was cloned ! Prepare for trouble, and make it double !" << std::endl ;
 }
 
-FragTrap::FragTrap(std::string name) : _hp(100), _ep(100), _level(1), _name(name), _meleeDamage(30), _rangedDamage(20), _armorReduc(5)
+FragTrap::FragTrap(std::string name) : _hp(FragTrap::maxhp), _ep(FragTrap::maxep), _level(1), _name(name), _meleeDamage(30), _rangedDamage(20), _armorReduc(5)
 {
 	std::srand(time(NULL));
 	std::cout << "FR4G-TP " << name << " was born, fear him mere mortals, for he does not fear death !" << std::endl;
