@@ -105,12 +105,12 @@ Fixed Fixed::Fixed::operator/(Fixed const& rhs) const {
 }
 
 Fixed &Fixed::Fixed::operator++() {
-    ++(this->_fpvalue);
+    ++(this->_fixedPointValue);
     return (*this);
 }
 
 Fixed &Fixed::Fixed::operator--() {
-    --(this->_fpvalue);
+    --(this->_fixedPointValue);
     return (*this);
 }
 
