@@ -12,7 +12,9 @@ class FragTrap : public ClapTrap{
 		~FragTrap(void);
 
 		FragTrap & operator=(FragTrap const &rhs);
-		
+
+		void				rangedAttack(std::string const &target) const;
+		void				meleeAttack(std::string const &target) const;	
 		void				vaulthunter_dot_exe(std::string const &target);
 };
 

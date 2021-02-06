@@ -34,17 +34,6 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 	return (*this);
 }
 
-
-void			ScavTrap::rangedAttack(std::string const &target) const
-{
-	std::cout << "CL4P-TP " << this->_name << " attacks " << target << " from range, dealing " << this->_rangedDamage << " damages, legend says " << target << " can still feel it when it's rainy !"  << std::endl;
-}
-
-void			ScavTrap::meleeAttack(std::string const &target) const
-{
-	std::cout << "CL4P-TP " << this->_name << " attacks " << target << " up close and personnal, dealing " << this->_meleeDamage << " vicious damages." << std::endl;
-}
-
 void			ScavTrap::challengeNewcomer(std::string const & target)
 {
 	std::string attacks[6] = {" to a dancing contest !", " to say the alphabet in reverse", " to lick his / her elbow", " to finish a pint of Maximator", " to program a printf without any mallocs !", " to work at Safran without wanting to kill himself."

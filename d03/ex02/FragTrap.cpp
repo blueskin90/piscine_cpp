@@ -34,6 +34,17 @@ FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 	return (*this);
 }
 
+
+void			FragTrap::rangedAttack(std::string const &target) const
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " from range, dealing " << this->_rangedDamage << " damages, legend says " << target << " can still feel it when it's rainy !"  << std::endl;
+}
+
+void			FragTrap::meleeAttack(std::string const &target) const
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " up close and personnal, dealing " << this->_meleeDamage << " vicious damages." << std::endl;
+}
+
 void			FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	std::string attacks[5] = { " Throws a Nokia 3310 at " + target, " Fart on "+ target, " Stab " + target + " with a pencil, John Wick style,", " empty its oil in " + target + " eyes", " dance like crazy in front of " + target};
