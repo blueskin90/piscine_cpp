@@ -19,6 +19,11 @@ Sorcerer::~Sorcerer(void)
 	std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
+void	Sorcerer::polymorph(Victim const & victim) const
+{
+	victim.getPolymorphed();
+}
+
 std::string	const Sorcerer::getName(void) const
 {
 	return (this->_name);
@@ -27,4 +32,15 @@ std::string	const Sorcerer::getName(void) const
 std::string	const Sorcerer::getTitle(void) const
 {
 	return (this->_title);
+}
+
+Sorcerer& Sorcerer::operator=(Sorcerer const &rhs)
+{
+	return (*this);
+}
+
+std::ostream& operator<< (std::ostream &output, Sorcerer const &sorc)
+{
+	output <<  sorc.getName() << ", " << sorc.getTitle() << ", and i like ponies!"<< std::endl;
+	return (output);
 }
