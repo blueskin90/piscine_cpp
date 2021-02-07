@@ -10,7 +10,7 @@ class AWeapon
 		AWeapon(AWeapon const &src);
 		virtual ~AWeapon(void);
 
-		std::string getName(void) const;
+		std::string const getName(void) const;
 		int getAPCost(void) const;
 		int getDamage(void) const;
 

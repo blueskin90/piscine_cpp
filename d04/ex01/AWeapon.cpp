@@ -4,7 +4,7 @@ AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name),
 {
 }
 
-AWeapon::AWeapon(AWeapon const &src) : _name(src.getName()), _APCost(src.getAPCost()), _damage(src.getDamage())
+AWeapon::AWeapon(AWeapon const &src) : _name(src.getName()), _APcost(src.getAPCost()), _damage(src.getDamage())
 {
 }
 
@@ -17,12 +17,12 @@ std::string	const AWeapon::getName(void) const
 	return (this->_name);
 }
 
-int	const AWeapon::getAPCost(void) const
+int	AWeapon::getAPCost(void) const
 {
-	return (this->_APCost);
+	return (this->_APcost);
 }
 
-int	const AWeapon::getDamage(void) const
+int	AWeapon::getDamage(void) const
 {
 	return (this->_damage);
 }
@@ -30,9 +30,9 @@ int	const AWeapon::getDamage(void) const
 
 AWeapon& AWeapon::operator=(AWeapon const &rhs)
 {
-	this._APcost = rhs.getAPCost();
-	this._damage = rhs.getDamage();
-	this._name = rhs.getName();
+	this->_APcost = rhs.getAPCost();
+	this->_damage = rhs.getDamage();
+	this->_name = rhs.getName();
 	return (*this);
 }
 
