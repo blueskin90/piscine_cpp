@@ -7,7 +7,7 @@ SuperMutant::SuperMutant(void): Enemy(170, "Super Mutant")
 
 SuperMutant::~SuperMutant(void)
 {
-	std::cout << "Aaargh ..." << std::cout;
+	std::cout << "Aaargh ..." << std::endl;
 }
 
 void SuperMutant::takeDamage(int damage)
