@@ -26,5 +26,6 @@ void	Peon::getPolymorphed(void) const
 
 Peon& Peon::operator=(Peon const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }

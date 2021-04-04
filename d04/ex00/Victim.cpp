@@ -32,6 +32,7 @@ std::string	const Victim::getName(void) const
 
 Victim& Victim::operator=(Victim const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 

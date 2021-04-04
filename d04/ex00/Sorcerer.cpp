@@ -36,6 +36,7 @@ std::string	const Sorcerer::getTitle(void) const
 
 Sorcerer& Sorcerer::operator=(Sorcerer const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
