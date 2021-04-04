@@ -7,9 +7,9 @@
 class AssaultTerminator : public ISpaceMarine
 {
 	private:
+	public:
 		AssaultTerminator&	operator=(AssaultTerminator const &rhs);
 		AssaultTerminator(AssaultTerminator const &src);
-	public:
 							AssaultTerminator(void);
 							~AssaultTerminator(void);	
 		AssaultTerminator	*clone(void) const;

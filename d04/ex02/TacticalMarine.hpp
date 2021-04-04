@@ -7,9 +7,9 @@
 class TacticalMarine : public ISpaceMarine
 {
 	private:
+	public:
 		TacticalMarine&	operator=(TacticalMarine const &rhs);
 							TacticalMarine(TacticalMarine const &src);
-	public:
 							TacticalMarine(void);
 							~TacticalMarine(void);	
 		TacticalMarine	*clone(void) const;
