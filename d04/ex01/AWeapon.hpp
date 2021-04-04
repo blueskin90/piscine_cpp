@@ -20,9 +20,9 @@ class AWeapon
 	protected:
 		AWeapon(void);
 
+		std::string	_name;
 		int			_APcost;
 		int			_damage;
-		std::string	_name;
 };
 
 #endif
