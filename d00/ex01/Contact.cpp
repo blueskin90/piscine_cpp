@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/19 23:03:59 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/22 14:30:15 by toliver          ###   ########.fr       */
+/*   Updated: 2021/05/11 18:18:34 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,11 @@ void	short_display(std::string string)
 	if (string.size() <= 10)
 	{
 		is >> std::setw(10) >> arr;
-		std::cout << arr;
+		std::cout << std::setw(10) << arr;
 	}
 	else
 	{
-		is >> std::setw(9) >> arr;
+		is >> std::setw(10) >> arr;
 		std::cout << arr << ".";
 	}
 }

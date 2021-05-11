@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 03:40:44 by toliver           #+#    #+#             */
-/*   Updated: 2020/07/22 15:29:27 by toliver          ###   ########.fr       */
+/*   Updated: 2021/05/11 18:18:35 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,23 +66,35 @@ void	PhoneBook::search(void) const
 		for (i = 0; i < this->i; i++)
 			this->contacts[i].print_short();
 	}
-	std::cout << "Veuillez entrer l'index desire:" << std::endl;
-	std::getline(std::cin, line);
-	while (line.length() == 0)
+	while (1)
 	{
-		std::cout << "Veuillez entrer une chaine de caracteres non vide:" << std::endl;
+		std::cout << "Veuillez entrer l'index desire:" << std::endl;
 		std::getline(std::cin, line);
+		while (line.length() == 0)
+		{
+			std::cout << "Veuillez entrer une chaine de caracteres non vide:" << std::endl;
+			std::getline(std::cin, line);
+		}
+		try 
+		{
+			i = std::stoi(line);
+			if (i < 0 || i >= this->i)
+				std::cout << "Index invalide !" << std::endl;
+			else
+			{
+				this->contacts[i].print();
+				break;
+			}
+		}
+		catch (const std::invalid_argument& ia) 
+		{
+			std::cout << "Index invalide !" << std::endl;
+		}
 	}
-	i = std::stoi(line);
-	if (i < 0 || i >= this->i)
-		std::cout << "Invalid index" << std::endl;
-	else
-		this->contacts[i].print();
 }
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) : i(0)
 {
-	this->i = 0;
 }
 
 PhoneBook::~PhoneBook(void)
