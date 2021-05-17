@@ -63,7 +63,7 @@ void			FragTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "FR4G-TP " << this->_name << " was at " << this->_hp << " and repaired " << amount << " damages ! which causes him to be at : ";  
 	if (amount > FragTrap::maxhp || (this->_hp + amount) > FragTrap::maxhp)
-		this->_hp = 100;
+		this->_hp = FragTrap::maxhp;
 	else
 		this->_hp += amount;
 	std::cout << this->_hp << " he is more powerful than ever, fly you fools !" << std::endl;

@@ -63,7 +63,7 @@ void			ScavTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "SC4V-TP " << this->_name << " was at " << this->_hp << " and repaired " << amount << " damages ! which causes him to be at : ";  
 	if (amount > ScavTrap::maxhp || (this->_hp + amount) > ScavTrap::maxhp)
-		this->_hp = 100;
+		this->_hp = ScavTrap::maxhp;
 	else
 		this->_hp += amount;
 	std::cout << this->_hp << " he is more powerful than ever, fly you fools !" << std::endl;

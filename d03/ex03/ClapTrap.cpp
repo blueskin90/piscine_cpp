@@ -63,7 +63,7 @@ void			ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "CL4P-TP " << this->_name << " was at " << this->_hp << " and repaired " << amount << " damages ! which causes him to be at : ";  
 	if (amount > this->_maxhp || (this->_hp + amount) > this->_maxhp)
-		this->_hp = 100;
+		this->_hp = this->_maxhp;
 	else
 		this->_hp += amount;
 	std::cout << this->_hp << " he is more powerful than ever, fly you fools !" << std::endl;
