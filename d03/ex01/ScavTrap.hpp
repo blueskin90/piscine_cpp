@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+# if defined (__linux__)
+#include <cstdlib>
+#endif
+
 class ScavTrap {
 	public :
 		ScavTrap(void);
