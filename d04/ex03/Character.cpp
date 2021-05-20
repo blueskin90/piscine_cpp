@@ -82,5 +82,3 @@ Character&	Character::operator=(Character const &rhs)
 	this->_mnumber = rhs.getMnumber();
 	return (*this);
 }
-
-

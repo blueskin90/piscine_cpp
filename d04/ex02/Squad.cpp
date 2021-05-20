@@ -53,13 +53,13 @@ int				Squad::push(ISpaceMarine *unit)
 	ISpaceMarine	**tmp;
 
 	if (unit == NULL)
-		return (0);
+		return (this->_nbr);
 
 	for (int i = 0; i < this->_nbr; i++)
 	{
 		if (this->_units[i] == unit)
 		{
-			return (0);
+			return (this->_nbr);
 		}
 	}
 	if (this->_nbr == 0)
