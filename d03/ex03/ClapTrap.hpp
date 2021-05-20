@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+# if defined (__linux__)
+#include <cstdlib>
+#endif
+
 class ClapTrap {
 	public :
 		ClapTrap & operator=(ClapTrap const &rhs);

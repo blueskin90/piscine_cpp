@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+# if defined (__linux__)
+#include <cstdlib>
+#endif
+
 class FragTrap {
 	public :
 		FragTrap(void);
@@ -36,7 +40,7 @@ class FragTrap {
 		std::string			_name;
 		unsigned int		_meleeDamage;
 		unsigned int		_rangedDamage;
-		unsigned			_armorReduc;
+		unsigned int		_armorReduc;
 };
 
 #endif
