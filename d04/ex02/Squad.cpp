@@ -23,8 +23,6 @@ Squad::Squad(Squad const &src): _units(NULL), _nbr(src.getCount())
 Squad&	Squad::operator=(Squad const &rhs)
 {
 
-	std::cout << rhs.getCount() << this->getCount() << std::endl;
-	std::cout << "kek" << std::endl;
 	if (this->_nbr != 0)
 	{
 		for (int i = 0; i < this->_nbr; i++)

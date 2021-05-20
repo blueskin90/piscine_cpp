@@ -33,10 +33,10 @@ int		main(void)
 	
 	std::cout << std::endl << std::endl << "Adding 2 Assault, 2 Tactical" << std::endl << std::endl;
 
-	Team->push(Poppuri);
-	Team->push(Bella);
-	Team->push(Heidi);
-	Team->push(Lyra);
+	std::cout << "should be 1 :" << Team->push(Poppuri) << std::endl;
+	std::cout << "should be 2 :" << Team->push(Bella) << std::endl;
+	std::cout << "should be 3 :" << Team->push(Heidi) << std::endl;
+	std::cout << "should be 4 :" << Team->push(Lyra) << std::endl;
 
 	std::cout << std::endl << std::endl << "Copying everything over" << std::endl << std::endl;
 
@@ -55,5 +55,6 @@ int		main(void)
 
 	std::cout << std::endl << std::endl << "Deleting other stuff that isn't part of the Squad" << std::endl << std::endl;
 	delete Gracia;
+	delete Ally;
 	return 0;
 }
