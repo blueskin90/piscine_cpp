@@ -17,12 +17,12 @@ Victim::Victim(Victim const &src) : _name(src.getName())
 
 Victim::~Victim(void)
 {
-	std::cout << "Victim " << this->_name << " died for no apparent reasons!" << std::endl;
+	std::cout << "The victim " << this->_name << " died for no apparent reasons!" << std::endl;
 }
 
 void	Victim::getPolymorphed(void) const
 {
-	std::cout << this->_name << " was just polymorphed in a cute little sheep!" << std::endl;
+	std::cout << this->_name << " has been turned into a cute little sheep!" << std::endl;
 }
 
 std::string	const Victim::getName(void) const
@@ -38,6 +38,6 @@ Victim& Victim::operator=(Victim const &rhs)
 
 std::ostream& operator<< (std::ostream &output, Victim const &vic)
 {
-	output << "I'm " << vic.getName() << " and i like otters!" << std::endl;
+	output << "I'm " << vic.getName() << " and I like otters!" << std::endl;
 	return (output);
 }
