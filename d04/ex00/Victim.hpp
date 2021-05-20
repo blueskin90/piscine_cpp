@@ -9,7 +9,7 @@ class Victim {
 
 		Victim(std::string const &name);
 		Victim(Victim const &src);
-		~Victim(void);
+		virtual ~Victim(void);
 
 		virtual void	getPolymorphed(void) const;
 
