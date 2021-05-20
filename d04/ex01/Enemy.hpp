@@ -10,7 +10,7 @@ class Enemy
 		int	_hp;
 		std::string _type;
 	public:
-			Enemy(int hp, std::string const & type);
+			Enemy(unsigned int hp, std::string const & type);
 			Enemy(Enemy const &src);
 			virtual ~Enemy();
 

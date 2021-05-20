@@ -19,8 +19,8 @@ class AWeapon
 		AWeapon& operator=(AWeapon const &rhs);
 	protected:
 		std::string	_name;
-		int			_APcost;
-		int			_damage;
+		int _APcost;
+		int _damage;
 	private:
 		AWeapon(void);
 };

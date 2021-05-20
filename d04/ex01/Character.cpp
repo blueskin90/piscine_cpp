@@ -8,7 +8,7 @@ Character::Character(std::string const &name) : _name(name), _APmax(40), _AP(40)
 {
 }
 
-Character::Character(Character const &src) : _name(src.getName()), _APmax(40), _AP(src.getAP()), _weapon(NULL)
+Character::Character(Character const &src) : _name(src.getName()), _APmax(40), _AP(src.getAP()), _weapon(src.getWeapon())
 {
 }
 
@@ -19,6 +19,7 @@ Character::~Character(void)
 Character& Character::operator=(Character const &rhs)
 {
 	this->_AP = rhs.getAP();
+	this->_weapon = rhs.getWeapon();
 	return (*this);
 }
 
