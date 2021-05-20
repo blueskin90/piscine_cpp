@@ -8,7 +8,7 @@ AWeapon::AWeapon(AWeapon const &src) : _name(src.getName()), _APcost(src.getAPCo
 {
 }
 
-virtual AWeapon::~AWeapon(void)
+AWeapon::~AWeapon(void)
 {
 }
 

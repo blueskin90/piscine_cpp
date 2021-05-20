@@ -1,8 +1,10 @@
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "EnergySword.hpp"
 
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
+#include "Cafard.hpp"
 
 #include "Character.hpp"
 
@@ -73,6 +75,11 @@ int			main(void)
 	std::cout << "Scorpion copied in mutant" << std::endl;
 	std::cout << "Mutant hp : " << mutant->getHP() << " should be the same as the Scorpion before" << std::endl;
 
+	Enemy *cafard = new Cafard();
+	AWeapon *sword = new EnergySword();
+
+	moi->equip(sword);
+	moi->attack(cafard);
 
 	return 0;
 }

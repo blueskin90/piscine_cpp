@@ -12,7 +12,7 @@ Enemy::Enemy(Enemy const &src): _hp(src.getHP()), _type(src.getType())
 {
 }
 
-virtual Enemy::~Enemy(void)
+Enemy::~Enemy(void)
 {
 }
 
