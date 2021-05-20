@@ -18,11 +18,11 @@ class AWeapon
 
 		AWeapon& operator=(AWeapon const &rhs);
 	protected:
-		AWeapon(void);
-
 		std::string	_name;
 		int			_APcost;
 		int			_damage;
+	private:
+		AWeapon(void);
 };
 
 #endif
