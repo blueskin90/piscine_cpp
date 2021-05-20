@@ -23,5 +23,12 @@ int main()
 	delete bob;
 	delete moi;
 	delete src;
+
+	ICharacter* test = new Character("test");
+	AMateria *mat = new Ice();
+
+	test->equip(mat);
+	test->use(0, *test);
+	delete test;
 	return 0;
 }

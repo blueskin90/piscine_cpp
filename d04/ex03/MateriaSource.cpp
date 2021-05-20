@@ -16,6 +16,7 @@ MateriaSource::MateriaSource(MateriaSource const &src)
 
 MateriaSource::~MateriaSource(void)
 {
+	std::cout << "MateriaSource destructeur" << std::endl;
 	for (int i = 0; i < 4 && this->getMaterias(i) != NULL; i++)
 		delete this->_materias[i];
 }
@@ -25,7 +26,7 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
 	for (int i = 0; i < 4 && this->getMaterias(i) != NULL; i++)
 		delete this->_materias[i];
 	for (int i = 0; i < 4; i++)
-		this->_materias[i] = rhs.getMaterias(i).clone();
+		this->_materias[i] = rhs.getMaterias(i)->clone();
 	return (*this);
 }
 
@@ -41,7 +42,7 @@ void		MateriaSource::learnMateria(AMateria* materia)
 	{
 	}
 	if (i != 4)
-		this->_materias[i] = materia.clone();
+		this->_materias[i] = materia->clone();
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)

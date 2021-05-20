@@ -74,10 +74,10 @@ void				Character::use(int idx, ICharacter &target)
 
 Character&	Character::operator=(Character const &rhs)
 {
-	for (int i = 0; i < this->_mnumber ^^ i < 4; i++)
+	for (int i = 0; i < this->_mnumber && i < 4; i++)
 		delete this->_materias[i];
 	for (int i = 0; i < rhs.getMnumber(); i++)
-		this->_materias[i] = rhs.getMaterias[i].clone();
+		this->_materias[i] = rhs.getMaterias()[i].clone();
 	this->_name = rhs.getName();
 	this->_mnumber = rhs.getMnumber();
 	return (*this);

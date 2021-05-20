@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(void): _type("no type") , _xp(0)
+AMateria::AMateria(void): _type("Blank") , _xp(0)
 {
 }
 
