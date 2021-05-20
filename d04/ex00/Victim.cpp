@@ -15,7 +15,7 @@ Victim::Victim(Victim const &src) : _name(src.getName())
 	std::cout << "Some random victim called " << this->_name << " just appeared!" << std::endl;
 }
 
-virtual Victim::~Victim(void)
+Victim::~Victim(void)
 {
 	std::cout << "The victim " << this->_name << " died for no apparent reasons!" << std::endl;
 }
