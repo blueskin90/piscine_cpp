@@ -4,22 +4,6 @@
 #include <iostream>
 
 class Bureaucrat {
-	class GradeTooHighException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw()
-			{
-				return ("Grade too high, can't get higher.");
-			}
-	};
-	class GradeTooLowException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw()
-			{
-				return ("Grade too low, can't get any lower.");
-			}
-	};
 	public:
 		Bureaucrat& operator=(Bureaucrat const &rhs);
 
@@ -32,6 +16,24 @@ class Bureaucrat {
 
 		void	 			incGrade(void);
 		void 				decGrade(void);
+
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Grade too high, can't get higher.");
+				}
+		};
+
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+			{
+				return ("Grade too low, can't get any lower.");
+			}
+		};
 
 	private:
 		Bureaucrat(void);
