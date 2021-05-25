@@ -33,5 +33,6 @@ int			main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << *noob << std::endl;
+
 	return (1);
 }

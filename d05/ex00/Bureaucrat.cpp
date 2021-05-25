@@ -34,6 +34,16 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src.getName())
 	this->_grade = srcGrade;
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high, can't get higher.");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low, can't get any lower.");
+}
+
 Bureaucrat::~Bureaucrat(void)
 {
 }
