@@ -7,8 +7,36 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target): Form::F
 void ShrubberyCreationForm::onExecute(bool success)
 {
 	if (success)
-		std::cout << "success" << std::endl;
-	else
-		std::cout << "fail" << std::endl;
-	// ici creer le fichier avec les arbres
+	{
+		try
+		{
+			std::ofstream myFile(this->getTarget() + "_shrubbery");
+			myFile <<"      /\\      " << std::endl;
+			myFile <<"     /\\*\\     " << std::endl;
+			myFile <<"    /\\O\\*\\    " << std::endl;
+			myFile <<"   /*/\\/\\/\\   " << std::endl;
+			myFile <<"  /\\O\\/\\*\\/\\  " << std::endl;
+			myFile <<" /\\*\\/\\*\\/\\/\\ " << std::endl;
+			myFile <<"/\\O\\/\\/*/\\/O/\\" << std::endl;
+			myFile <<"     ||      " << std::endl;
+			myFile <<"     ||      " << std::endl;
+			myFile <<"     ||  " << std::endl;
+			myFile << std::endl;
+			myFile <<"      /\\      " << std::endl;
+			myFile <<"     /\\*\\     " << std::endl;
+			myFile <<"    /\\O\\*\\    " << std::endl;
+			myFile <<"   /*/\\/\\/\\   " << std::endl;
+			myFile <<"  /\\O\\/\\*\\/\\  " << std::endl;
+			myFile <<" /\\*\\/\\*\\/\\/\\ " << std::endl;
+			myFile <<"/\\O\\/\\/*/\\/O/\\" << std::endl;
+			myFile <<"     ||      " << std::endl;
+			myFile <<"     ||      " << std::endl;
+			myFile <<"     ||  " << std::endl;
+			myFile.close();
+		}
+		catch (std::exception &e)
+		{
+			std::cout << "Couldn't Create shrubbery because : " << e.what() << std::endl;
+		}	
+	}
 }
