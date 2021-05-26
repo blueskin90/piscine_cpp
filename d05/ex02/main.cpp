@@ -4,32 +4,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-void		signForm(Form *form, Bureaucrat &bureaucrat)
-{
-	try
-	{
-		form->beSigned(bureaucrat);
-		std::cout << "form signed !" << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "form not signed because : " << e.what() << std::endl;
-	}	
-}
-
-void		execForm(Form *form, Bureaucrat &bureaucrat)
-{
-	try
-	{
-		form->execute(bureaucrat);
-		std::cout << "form executed !" << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "form not executed because: " << e.what() << std::endl;
-	}	
-}
-
 int			main(void)
 {
 	Bureaucrat	noob("Noobito", 146);
@@ -40,45 +14,41 @@ int			main(void)
 	Form* shrubberyform = new ShrubberyCreationForm("maison");
 
 	std::cout << "SHRUBBERY FORM TEST" << std::endl;
-	signForm(shrubberyform, noob);
+	noob.signForm(*shrubberyform);
 	noob.incGrade();
-	execForm(shrubberyform, god);
-	signForm(shrubberyform, noob);
-	execForm(shrubberyform, god);
+	god.executeForm(*shrubberyform);
+	noob.signForm(*shrubberyform);
+	god.executeForm(*shrubberyform);
 	god.incGrade();
-	execForm(shrubberyform, god);
+	god.executeForm(*shrubberyform);
 
 	std::cout << std::endl << "ROBOTOMY FORM TEST" << std::endl;
 	while (noob.getGrade() > 73)
 		noob.incGrade();
 	while (god.getGrade() > 46)
 		god.incGrade();
-	
-	signForm(robotomyform, noob);
-	noob.incGrade();
-	execForm(robotomyform, god);
-	signForm(robotomyform, noob);
-	execForm(robotomyform, god);
-	god.incGrade();
-	execForm(robotomyform, god);
 
+	std::cout << "SHRUBBERY FORM TEST" << std::endl;
+	noob.signForm(*robotomyform);
+	noob.incGrade();
+	god.executeForm(*robotomyform);
+	noob.signForm(*robotomyform);
+	god.executeForm(*robotomyform);
+	god.incGrade();
+	god.executeForm(*robotomyform);
 
 	std::cout << std::endl << "PARDON FORM TEST" << std::endl;
 	while (noob.getGrade() > 26)
 		noob.incGrade();
 	while (god.getGrade() > 6)
 		god.incGrade();
-	
-	signForm(pardonform, noob);
+
+	noob.signForm(*pardonform);
 	noob.incGrade();
-	execForm(pardonform, god);
-	signForm(pardonform, noob);
-	execForm(pardonform, god);
+	god.executeForm(*pardonform);
+	noob.signForm(*pardonform);
+	god.executeForm(*pardonform);
 	god.incGrade();
-	execForm(pardonform, god);
-
-
-
-
+	god.executeForm(*pardonform);
 	return (1);
 }

@@ -9,7 +9,7 @@ class ShrubberyCreationForm : public Form
 {
 	public :
 		ShrubberyCreationForm(std::string const &target);
-		void onExecute(bool success);
+		void onExecute(bool success) const;
 };
 
 #endif /* SHRUBBERYCREATIONFORM_HPP */

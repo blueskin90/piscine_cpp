@@ -7,7 +7,7 @@ class RobotomyRequestForm : public Form
 {
 	public:
 		RobotomyRequestForm(std::string const &target);
-		void onExecute(bool success);
+		void onExecute(bool success) const;
 };
 
 #endif /* ROBOTOMYREQUESTFORM_HPP */

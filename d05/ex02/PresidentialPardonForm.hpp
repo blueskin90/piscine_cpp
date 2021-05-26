@@ -7,7 +7,7 @@ class PresidentialPardonForm : public Form
 {
 	public :
 		PresidentialPardonForm(std::string const &target);
-		void onExecute(bool success);
+		void onExecute(bool success) const;
 };
 
 #endif /* PRESIDENTIALPARDONFORM_HPP */

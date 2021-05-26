@@ -48,7 +48,7 @@ void				Form::beSigned(Bureaucrat const &bureaucrat)
 		throw Form::GradeTooLowException();
 }
 
-void				Form::execute(Bureaucrat const &executor)
+void				Form::execute(Bureaucrat const &executor) const
 {
 	int				grade = executor.getGrade();
 	

@@ -4,7 +4,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target): Form("Robot
 {
 }
 
-void	RobotomyRequestForm::onExecute(bool success)
+void	RobotomyRequestForm::onExecute(bool success) const
 {
 	if (success)
 		std::cout << "*BZZZZZZT pew pew RRRRRRRRRR* " << this->getTarget() << " a bien été robotomizé" << std::endl;

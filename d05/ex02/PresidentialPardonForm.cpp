@@ -4,7 +4,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const &target): Form:
 {
 }
 
-void PresidentialPardonForm::onExecute(bool success)
+void PresidentialPardonForm::onExecute(bool success) const
 {
 	if (success)
 		std::cout << this->getTarget() << " a été pardonné par Zafod Beeblebrox" << std::endl;

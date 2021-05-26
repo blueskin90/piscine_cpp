@@ -38,8 +38,8 @@ class Form {
 				virtual const char* what() const throw();
 		};
 
-		void execute(Bureaucrat const &executor);
-		virtual void onExecute(bool success) = 0;
+		void execute(Bureaucrat const &executor) const;
+		virtual void onExecute(bool success) const = 0;
 
 	private:
 		int		checkGrade(int grade);
