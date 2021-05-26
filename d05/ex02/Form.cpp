@@ -1,10 +1,10 @@
 #include "Form.hpp"
 
-Form::Form(std::string const &name, int signGrade, int execGrade): _name(name),_signGrade(checkGrade(signGrade)), _execGrade(checkGrade(execGrade)), _signed(false)
+Form::Form(std::string const &name, int signGrade, int execGrade, std::string const &target): _name(name),_signGrade(checkGrade(signGrade)), _execGrade(checkGrade(execGrade)), _signed(false), _target(target)
 {
 }
 
-Form::Form(Form const &src): _name(src.getName()), _signGrade(checkGrade(src.getSignGrade())), _execGrade(checkGrade(src.getExecGrade())), _signed(src.getSignature())
+Form::Form(Form const &src): _name(src.getName()), _signGrade(checkGrade(src.getSignGrade())), _execGrade(checkGrade(src.getExecGrade())), _signed(src.getSignature()), _target(src.getTarget())
 {
 }
 
@@ -32,6 +32,12 @@ bool				Form::getSignature(void) const
 	return (this->_signed);
 }
 
+std::string const	Form::getTarget(void) const
+{
+	return (this->_target);
+}
+
+
 void				Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	int				grade = bureaucrat.getGrade();
@@ -42,16 +48,34 @@ void				Form::beSigned(Bureaucrat const &bureaucrat)
 		throw Form::GradeTooLowException();
 }
 
+void				Form::execute(Bureaucrat const &executor)
+{
+	int				grade = executor.getGrade();
+	
+	if (this->_signed == false)
+	{
+		this->onExecute(false);
+		throw Form::NotSignedException();
+	}
+	if (grade <= this->_execGrade)
+		this->onExecute(true);
+	else
+	{
+		this->onExecute(false);
+		throw Form::GradeTooLowException();
+	}
+}
+
 int		Form::checkGrade(int grade)
 {
-	if (grade < 1 || grade < 1)
+	if (grade < 1)
 		throw Form::GradeTooHighException();
-	else if (grade > 150 || grade > 150)
+	else if (grade > 150)
 		throw Form::GradeTooLowException();
 	return (grade);
 }
 
-Form::Form(void): _name("Unnamed"), _signGrade(150), _execGrade(150), _signed(false)
+Form::Form(void): _name("Unnamed"), _signGrade(150), _execGrade(150), _signed(false), _target("unnamedTarget")
 {
 }
 
@@ -77,4 +101,7 @@ const char* Form::GradeTooLowException::what() const throw()
 	return ("Grade too low.");
 }
 
-
+const char* Form::NotSignedException::what() const throw()
+{
+	return ("The form wasn't signed.");
+}
