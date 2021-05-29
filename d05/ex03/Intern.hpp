@@ -15,9 +15,14 @@ class Intern
 		Intern(Intern const &intern);
 		~Intern(void);
 		
-		Form *makeForm(std::string formType, std::string target);
+		Form* makeForm(std::string formType, std::string target);
 	private:
-		
+		Form* _makePardonForm(std::string target);
+		Form* _makeRobotomyForm(std::string target);
+		Form* _makeShrubberyForm(std::string target);
+
+		Form* (Intern::*f)(std::string) _functions[3];
+			
 };
 
 #endif /* INTERN_HPP */
