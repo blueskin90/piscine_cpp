@@ -103,5 +103,5 @@ const char* Form::GradeTooLowException::what() const throw()
 
 const char* Form::NotSignedException::what() const throw()
 {
-	return ("The form wasn't signed.");
+	return ("the form wasn't signed.");
 }
