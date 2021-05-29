@@ -87,7 +87,7 @@ Form &Form::operator=(Form const &rhs)
 
 std::ostream &operator<<(std::ostream &output, Form const &form)
 {
-	output << "Form name: " << form.getName() << " with Sign grade set to : " << form.getSignGrade() << " and Exec grade set to : " << form.getExecGrade() << " and it is " << (form.getSignature() ? "signed." : "not signed.");
+	output << (form.getSignature() ? "Signed" : "unsigned") << " form: " << form.getName() << " with Sign grade set to : " << form.getSignGrade() << ", Exec grade set to : " << form.getExecGrade();
 	return (output);
 }
 

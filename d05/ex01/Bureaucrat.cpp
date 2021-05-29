@@ -77,16 +77,20 @@ void				Bureaucrat::signForm(Form &form) const
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->getName() << " signs " << form.getName() << "." << std::endl;
+		std::cout << *this << " signs " << form << "." << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << *this << " can't sign " << form << " because its grade is too low to sign this form." << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->getName() << " cant sign " << form.getName() << " because " << this->getName() << " " << e.what() << std::endl;
+		std::cout << *this << " can't sign " << form << " because : " << e.what() << std::endl;
 	}
 }
 
 std::ostream& operator<< (std::ostream &output, Bureaucrat const &bur)
 {
-	output << bur.getName() << ",bureaucrat grade " << bur.getGrade() << ".";
+	output << bur.getName() << ", bureaucrat grade " << bur.getGrade();
 	return (output);
 }
