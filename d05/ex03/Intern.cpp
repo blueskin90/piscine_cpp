@@ -1,14 +1,25 @@
 #include "Intern.hpp"
 
+const std::string Intern::_compareStrings[3] = {
+	"shrubbery creation", 
+	"robotomy request", 
+	"presidential pardon"
+};
+
+Form* (*formFunc[3])(std::string) = {
+	&Intern::_makePardonForm,
+	&Intern::_makeRobotomyForm,
+	&Intern::_makeShrubberyForm
+};
+
 Intern &Intern::operator=(Intern const &rhs)
 {
 	(void)rhs;
 	return (*this);
 }
 
-Intern::Intern(void)
+Intern::Intern(void) 
 {
-	_functions[0] = &Intern::_makePardonForm;
 }
 
 Intern::Intern(Intern const &intern)
@@ -20,14 +31,33 @@ Intern::~Intern(void)
 {
 }
 
+int		Intern::getFormType(std::string form)
+{
+	int	i;
+
+	i = 0;
+	while (i < 3 && form != Intern::_compareStrings[i])
+		i++;
+	return (i);
+}
+
 Form* Intern::makeForm(std::string type, std::string target)
 {
-	(void)type;
-	(void)target;
-	Form *form = NULL;
-	std::cout << "Intern creates " << *form << std::endl;
+	int		typeint;
+	Form*	form;
 
-	return (form);
+	typeint = getFormType(type);
+	if (typeint < 3)
+	{
+		form = Intern::formFunc[typeint](target);
+		std::cout << "Intern creates " << *form << std::endl;
+		return (form);
+	}
+	else
+	{
+		std::cout << "Intern couldn't create form: " << type << " because it doesn't exists" << std::endl;
+		return (NULL);
+	}
 }
 
 Form* Intern::_makePardonForm(std::string target)

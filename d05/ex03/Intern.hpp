@@ -6,8 +6,11 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Form.hpp"
 
+
 class Intern
 {
+	typedef Form* (*formPtr)(std::string);
+
 	public:
 		Intern & operator=(Intern const &rhs);
 		
@@ -16,12 +19,16 @@ class Intern
 		~Intern(void);
 		
 		Form* makeForm(std::string formType, std::string target);
-	private:
+
 		Form* _makePardonForm(std::string target);
 		Form* _makeRobotomyForm(std::string target);
 		Form* _makeShrubberyForm(std::string target);
+		const formPtr formFunc[3];
 
-		Form* (Intern::*f)(std::string) _functions[3];
+
+	private:
+		int		getFormType(std::string form);
+		static const std::string _compareStrings[3];
 			
 };
 

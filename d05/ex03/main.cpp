@@ -3,9 +3,11 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int			main(void)
 {
+	/*
 	Bureaucrat	noob("Noobito", 146);
 	Bureaucrat	god("God", 138);
 
@@ -50,5 +52,8 @@ int			main(void)
 	god.executeForm(*pardonform);
 	god.incGrade();
 	god.executeForm(*pardonform);
+	*/
+	Intern noob;
+
 	return (1);
 }
