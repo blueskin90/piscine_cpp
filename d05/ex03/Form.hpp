@@ -7,7 +7,6 @@ class Bureaucrat;
 
 class Form {
 	public:
-		Form(std::string const &name, int signGrade, int execGrade, std::string const &target);
 		Form(Form const &src);
 		~Form(void);
 
@@ -40,6 +39,8 @@ class Form {
 
 		void execute(Bureaucrat const &executor) const;
 		virtual void onExecute(bool success) const = 0;
+	protected:
+		Form(std::string const &name, int signGrade, int execGrade, std::string const &target);
 
 	private:
 		int		checkGrade(int grade);
