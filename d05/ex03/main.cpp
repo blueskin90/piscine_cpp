@@ -7,13 +7,14 @@
 
 int			main(void)
 {
-	/*
+	Intern slave;
 	Bureaucrat	noob("Noobito", 146);
 	Bureaucrat	god("God", 138);
 
-	Form* pardonform= new PresidentialPardonForm("Thomas");
-	Form* robotomyform = new RobotomyRequestForm("Pauvre victime");
-	Form* shrubberyform = new ShrubberyCreationForm("maison");
+	Form* pardonform = slave.makeForm("presidential pardon", "Thomas");
+	Form* robotomyform =  slave.makeForm("robotomy request", "Pauvre victime");
+	Form* shrubberyform = slave.makeForm("shrubbery creation", "Maison");
+
 
 	std::cout << "SHRUBBERY FORM TEST" << std::endl;
 	noob.signForm(*shrubberyform);
@@ -52,8 +53,6 @@ int			main(void)
 	god.executeForm(*pardonform);
 	god.incGrade();
 	god.executeForm(*pardonform);
-	*/
-	Intern noob;
 
 	return (1);
 }

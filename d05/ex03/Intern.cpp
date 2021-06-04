@@ -6,12 +6,6 @@ const std::string Intern::_compareStrings[3] = {
 	"presidential pardon"
 };
 
-Form* (*formFunc[3])(std::string) = {
-	&Intern::_makePardonForm,
-	&Intern::_makeRobotomyForm,
-	&Intern::_makeShrubberyForm
-};
-
 Intern &Intern::operator=(Intern const &rhs)
 {
 	(void)rhs;
@@ -20,10 +14,17 @@ Intern &Intern::operator=(Intern const &rhs)
 
 Intern::Intern(void) 
 {
+	formFunc[0] = &Intern::_makePardonForm;
+	formFunc[1] = &Intern::_makeRobotomyForm;
+	formFunc[2] = &Intern::_makeShrubberyForm;
 }
 
 Intern::Intern(Intern const &intern)
 {
+	formFunc[0] = &Intern::_makePardonForm;
+	formFunc[1] = &Intern::_makeRobotomyForm;
+	formFunc[2] = &Intern::_makeShrubberyForm;
+
 	*this = intern;
 }
 
@@ -49,7 +50,7 @@ Form* Intern::makeForm(std::string type, std::string target)
 	typeint = getFormType(type);
 	if (typeint < 3)
 	{
-		form = Intern::formFunc[typeint](target);
+		form = (this->*formFunc[typeint])(target);
 		std::cout << "Intern creates " << *form << std::endl;
 		return (form);
 	}

@@ -9,8 +9,8 @@
 
 class Intern
 {
-	typedef Form* (*formPtr)(std::string);
 
+	typedef Form* (Intern::*InternMemFn)(std::string);
 	public:
 		Intern & operator=(Intern const &rhs);
 		
@@ -23,13 +23,12 @@ class Intern
 		Form* _makePardonForm(std::string target);
 		Form* _makeRobotomyForm(std::string target);
 		Form* _makeShrubberyForm(std::string target);
-		const formPtr formFunc[3];
+		InternMemFn formFunc[3];
 
 
 	private:
 		int		getFormType(std::string form);
 		static const std::string _compareStrings[3];
-			
 };
 
 #endif /* INTERN_HPP */
