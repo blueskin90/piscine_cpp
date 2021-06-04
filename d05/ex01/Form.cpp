@@ -44,9 +44,9 @@ void				Form::beSigned(Bureaucrat const &bureaucrat)
 
 int		Form::checkGrade(int grade)
 {
-	if (grade < 1 || grade < 1)
+	if (grade < 1)
 		throw Form::GradeTooHighException();
-	else if (grade > 150 || grade > 150)
+	else if (grade > 150)
 		throw Form::GradeTooLowException();
 	return (grade);
 }
