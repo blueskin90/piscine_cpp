@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Converter.hpp"
 
 int		main(int ac, char **av)
 {
@@ -7,7 +8,8 @@ int		main(int ac, char **av)
 		std::cout << "Usage: ./convert argumentToConvert" << std::endl;
 		return (1);
 	}
-	(void)av;
+	Converter converter(av[1]);
+	converter.print();
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2021/06/05 13:14:03 by toliver          ###   ########.fr        #
+#    Updated: 2021/06/10 14:58:08 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FLAGS = -Wall -Wextra -Werror -Wno-conversion -g3
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 				main \
+				Converter \
 		)) 
 
 all: $(NAME) 
