@@ -20,7 +20,6 @@ FLAGS = -Wall -Wextra -Werror -Wno-conversion -std=c++98
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 				main \
-				Converter \
 		)) 
 
 all: $(NAME) 
