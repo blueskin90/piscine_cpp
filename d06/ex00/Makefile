@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2021/06/10 14:58:08 by toliver          ###   ########.fr        #
+#    Updated: 2021/06/14 14:40:14 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = convert
 
 INCLUDES = -I 
 
-FLAGS = -Wall -Wextra -Werror -Wno-conversion -g3
+FLAGS = -Wall -Wextra -Werror -Wno-conversion -std=c++98
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 				main \
