@@ -50,7 +50,12 @@ int		main(void)
 
 	
 	std::cout <<"'"<< result->s1 <<"'"<< std::endl; 
+	std::cout.write(static_cast<const char*>(test), 8);
+	std::cout << std::endl;
 	std::cout << result->n << std::endl;
+	std::cout << *reinterpret_cast<int*>(static_cast<char*>(test) + 8) << std::endl;
 	std::cout << "'" << result->s2 <<"'" << std::endl;
+	std::cout.write(static_cast<const char*>(test) + 8 * sizeof(char) + 1 * sizeof(int), 8);
+	std::cout << std::endl;
 	return (0);
 }
