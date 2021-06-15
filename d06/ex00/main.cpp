@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <limits>
+#include <climits>
 #include <iomanip>
 
 int		main(int ac, char **av)

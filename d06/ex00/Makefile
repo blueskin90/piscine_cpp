@@ -14,7 +14,7 @@ CC= clang++
 
 NAME = convert
 
-INCLUDES = -I 
+INCLUDES = -I ./ 
 
 FLAGS = -Wall -Wextra -Werror -Wno-conversion -std=c++98
 
