@@ -2,6 +2,7 @@
 #include <cmath>
 #include <limits>
 #include <iomanip>
+#include <string.h>
 
 struct RealData {
 	char s1[8];
