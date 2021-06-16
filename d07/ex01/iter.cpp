@@ -1,6 +1,6 @@
 #include <iostream> 
 
-	template <typename T>
+template <typename T>
 void	iter(T *a, size_t size, void (*fn_ptr)(T *))
 {
 	if (fn_ptr != NULL)
@@ -12,6 +12,8 @@ void	iter(T *a, size_t size, void (*fn_ptr)(T *))
 	}
 }
 
+// TODO : faire que ces fonctions soient des templates
+//
 void	testfunc(int *ptr)
 {
 	*ptr = 42;
