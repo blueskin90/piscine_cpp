@@ -19,7 +19,7 @@ INCLUDES = -I
 FLAGS = -Wall -Wextra -Werror -Wno-conversion -std=c++98
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
-				array \
+				main \
 		)) 
 
 all: $(NAME) 
