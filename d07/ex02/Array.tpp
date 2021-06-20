@@ -11,11 +11,7 @@ class Array{
 				}
 		};
 
-		Array<T>(): _size(0), _array()
-		{
-		}
-		
-		Array<T>(unsigned int n): _size(n), _array(new T[n]())
+		Array<T>(unsigned int n = 0): _size(n), _array(new T[n]())
 		{
 		}
 
@@ -29,8 +25,7 @@ class Array{
 		{
 			if (this != &rhs)
 			{
-				if (this->_size > 0)
-					delete [] this->_array;
+				delete [] this->_array;
 				this->_size = rhs.size();
 				this->_array = new T[rhs.size()]();
 				for (unsigned int i = 0; i < _size; i++)
@@ -41,8 +36,7 @@ class Array{
 
 		~Array<T>()
 		{
-			if (this->_array)
-				delete [] this->_array;
+			delete [] this->_array;
 		}
 
 		T &operator[](unsigned int i) const 
