@@ -41,4 +41,22 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	Span newtest = Span(5);
+	std::vector<int> myvec;
+
+	for (int i = 0; i < 6; i++)
+		myvec.push_back(i);
+
+	try 
+	{
+		newtest.addVec(myvec);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "last test " << e.what() << std::endl;
+	}
+	std::cout << newtest.shortestSpan() << std::endl;
+	std::cout << newtest.longestSpan() << std::endl;
+
 }

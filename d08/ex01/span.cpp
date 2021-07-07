@@ -33,6 +33,18 @@ void	Span::addNumber(int n)
 		throw ArrayFullException();	
 }
 
+void	Span::addVec(std::vector<int> vec)
+{
+	std::vector<int>::iterator ite;
+
+	ite = vec.begin();
+	while (ite != vec.end())
+	{
+		addNumber(*ite);
+		ite++;
+	}
+}
+
 unsigned long int		Span::shortestSpan(void) const
 {
 	unsigned long int shortest = ULLONG_MAX;

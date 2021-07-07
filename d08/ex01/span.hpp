@@ -14,6 +14,7 @@ class Span{
 		Span &operator = (Span const &rhs);
 
 		void addNumber(int n);
+		void addVec(std::vector<int> vec);
 		unsigned long int	shortestSpan(void) const;
 		unsigned long int longestSpan(void) const;
 
