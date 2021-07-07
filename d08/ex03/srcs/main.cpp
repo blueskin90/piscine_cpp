@@ -5,38 +5,6 @@
 #include "AInstruction.hpp"
 #include "instructions.hpp"
 
-void	findclosing(std::string str, int *i)
-{
-	int		counter = 0;
-
-	while (str[*i] && *i > -1 && *i < 255)
-	{
-		if (str[*i] == '[')
-			counter++;
-		else if (str[*i] == ']')
-			counter--;
-		if (counter == 0)
-			break;
-		(*i)++;
-	}
-}
-
-void	findopening(std::string str, int *i)
-{
-	int		counter = 0;
-
-	while (str[*i] && *i > -1 && *i < 255)
-	{
-		if (str[*i] == ']')
-			counter++;
-		else if (str[*i] == '[')
-			counter--;
-		if (counter == 0)
-			break;
-		(*i)--;
-	}
-}
-
 int		parsing(char *filePath, std::vector<AInstruction*> *list)
 {
 	std::fstream file;
@@ -53,21 +21,21 @@ int		parsing(char *filePath, std::vector<AInstruction*> *list)
 	str = strStream.str();
 	for (std::string::size_type i = 0; i < str.size(); i++)
 	{
-		if (str[i] == '>')
+		if (str[i] == 'f')
 			list->push_back(new IncPtr());
-		else if (str[i] == '<')
+		else if (str[i] == 'u')
 			list->push_back(new DecPtr());
-		else if (str[i] == '+')
+		else if (str[i] == 'c')
 			list->push_back(new IncPtrValue());
-		else if (str[i] == '-')
+		else if (str[i] == 'k')
 			list->push_back(new DecPtrValue());
-		else if (str[i] == '.')
+		else if (str[i] == 't')
 			list->push_back(new Print());
-		else if (str[i] == ',')
+		else if (str[i] == 'h')
 			list->push_back(new Read());
-		else if (str[i] == '[')
+		else if (str[i] == 'i')
 			list->push_back(new StartLoop());
-		else if (str[i] == ']')
+		else if (str[i] == 's')
 			list->push_back(new EndLoop());
 	}
 	file.close();
