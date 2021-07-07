@@ -6,20 +6,22 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2021/06/30 16:45:45 by toliver          ###   ########.fr        #
+#    Updated: 2021/07/07 13:54:25 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC= clang++
 
-NAME = a.out
+NAME = mindopen
 
-INCLUDES = -I ./ 
+INCLUDES = -I ./includes/. 
 
 FLAGS = -Wall -Wextra -Werror -Wno-conversion -std=c++98
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 				main \
+				AInstruction \
+				instructions \
 		)) 
 
 all: $(NAME) 
@@ -29,7 +31,7 @@ $(NAME): objs $(OBJS)
 	@printf "\033[92m\033[1:32mCompiling -------------> \033[91m$(NAME)\033[0m:\033[0m%-16s\033[32m[✔]\033[0m\n"
 	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-objs/%.o: %.cpp
+objs/%.o: srcs/%.cpp
 	@printf  "\033[1:92mCompiling $(NAME)\033[0m %-31s\033[32m[$<]\033[0m\n" ""
 	@$(CC) -o $@ -c $< $(FLAGS) -fPIC $(INCLUDES)
 	@printf "\033[A\033[2K"
