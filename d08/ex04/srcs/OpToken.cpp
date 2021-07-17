@@ -35,7 +35,7 @@ NumToken*	OpToken::exec(NumToken *a, NumToken *b) const
 	}
 	else if (this->_value == '-')
 	{
-		return (new NumToken(a->getValue() - b->getValue()));
+		return (new NumToken(b->getValue() - a->getValue()));
 	}
 	else if (this->_value == '*')
 		return (new NumToken(a->getValue() * b->getValue()));
