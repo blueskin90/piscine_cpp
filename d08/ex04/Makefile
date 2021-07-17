@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2021/07/09 17:36:38 by toliver          ###   ########.fr        #
+#    Updated: 2021/07/17 19:21:10 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,10 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 				OpToken \
 				ParCloseToken \
 				ParOpenToken \
+				utils	\
+				parsing \
+				print	\
+				convert \
 		)) 
 
 all: $(NAME) 
