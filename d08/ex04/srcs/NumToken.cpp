@@ -1,10 +1,11 @@
 #include "NumToken.hpp"
 
-NumToken::NumToken(int value): _value(value)
+NumToken::NumToken(long long int value): _value(value)
 {
+	this->_type = NUMBER;
 }
 
-int	NumToken::getValue() const
+long long int	NumToken::getValue() const
 {
 	return (this->_value);
 }

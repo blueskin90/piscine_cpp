@@ -2,6 +2,7 @@
 
 ParOpenToken::ParOpenToken(char value): _value(value)
 {
+	this->_type = PAROPEN;
 }
 
 char	ParOpenToken::getValue() const
@@ -13,6 +14,6 @@ std::string	ParOpenToken::getPrint() const
 {
 	std::stringstream ss;
 
-	ss << "ParOpen(" << this->getValue() << ")";
+	ss << "ParOpen";
 	return (ss.str());
 }

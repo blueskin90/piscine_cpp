@@ -2,6 +2,7 @@
 
 ParCloseToken::ParCloseToken(char value): _value(value)
 {
+	this->_type = PARCLOSE;
 }
 
 char	ParCloseToken::getValue() const
@@ -13,6 +14,6 @@ std::string	ParCloseToken::getPrint() const
 {
 	std::stringstream ss;
 
-	ss << "ParClose(" << this->getValue() << ")";
+	ss << "ParClose";
 	return (ss.str());
 }

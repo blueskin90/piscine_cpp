@@ -8,11 +8,11 @@
 class NumToken: public Token
 {
 	public:
-		NumToken(int value);
-		int	getValue() const;
+		NumToken(long long int value);
+		long long int	getValue() const;
 		std::string getPrint() const;
 	private:
-		int		_value;
+		long long int		_value;
 };
 
 
